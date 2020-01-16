@@ -13,7 +13,7 @@
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone https://github.com/dmitriykryukov/dmitriykryukov-project-ls.git
+$ git clone https://github.com/dmitriykryukov/kryukov-ls.git
 $ cd dmitriykryukov-project-ls
 $ yarn
 ```
