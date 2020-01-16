@@ -1,0 +1,12 @@
+header.header
+  .container.flex-container.flex-container__row
+    .header__logo KD
+
+    +nav('nav', ["Главная", "Обо мне", "Навыки", "Работа", "Отзывы", "Связаться"])
+
+    .socials
+      ul.socials__list
+        each social in ["insta", "vk", "github"]
+          li.socials__item
+            a(class=`socials__link.socials__link_${social}` href="#" target="_blank")
+              +icon(`${social}`, `icon_${social}`)
