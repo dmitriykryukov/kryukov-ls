@@ -1,0 +1,37 @@
+section.section.author
+  .author__bg
+    +image('content/Mountain-Baloon.jpg', 'author__bg-img')
+  include ../sections/header.pug
+  .author__container
+    .user
+      .user__desc.item Личный сайт веб разработчика
+      .user__name.item Дмитрий Крюков
+      .user__scroll.item
+        .text Скролл
+        a(href="#about").icon-scroll
+  
+  section.section.about#about
+    .about__col-left
+      .author__photo
+        +image('content/user.jpg', 'author__avatar')
+      .block__text
+        .transp
+          p Проживаю:
+          p Возраст:
+          p Родился:
+        .semibold
+          p Канада, Монреаль
+          p 40 лет
+          p 19 января 1980
+    .about__col-right
+      .about__desc
+        p Привет меня зовут
+        .user__name-small Дмитрий Крюков
+        p До веб разработки я был графическим дизайнером.
+        .note * Этот сайт я разработал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
+              
+      
+
+
+      
+

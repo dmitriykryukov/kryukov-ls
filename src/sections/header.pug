@@ -1,8 +1,15 @@
 header.header
-  .container.flex-container.flex-container__row
+  .container.flex.flex__row
     .header__logo KD
 
-    +nav('nav', ["Главная", "Обо мне", "Навыки", "Работа", "Отзывы", "Связаться"])
+    +nav('nav', [
+      {title: 'Главная', link: '#'},
+      {title: 'Обо мне', link: '#'},
+      {title: 'Навыки', link: '#'},
+      {title: 'Работы', link: '#'},
+      {title: 'Отзывы', link: '#'},
+      {title: 'Связаться', link: '#'}
+    ])
 
     .socials
       ul.socials__list

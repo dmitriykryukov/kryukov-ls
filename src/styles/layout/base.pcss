@@ -26,34 +26,35 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
-  background-image: url('..\images\content\Mountain-Baloon.jpg');
-  background-size: cover;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
+
+  @include desktop {
+    width: 83%;
+  }  
   @include phones {
     width: 85%;
   }
 }
 
-.flex-container {
+.flex {
   display: flex;
   flex-wrap: nowrap;
   &__column {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;  
   }
   &__row { 
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  } 
-
+  }
 }
 
 .fullscreen-section {
