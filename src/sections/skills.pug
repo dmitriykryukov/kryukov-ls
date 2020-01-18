@@ -1,0 +1,27 @@
+section.section.skills
+  .skills__col.skills__col_left
+    .skills__col-content
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").skills__triangle
+        polygon(points="0,0 0,110 1000, 110")
+      +image('content/backpack.png', 'skills-pic')
+  .skills__col.skills__col_right
+    .skills__col-content
+      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").skills__triangle
+        polygon(points="0,110 1000,110 1000,0") 
+      .skills__title
+        .block-title Чем я могу быть вам полезен
+      .skills__text
+        p В данном разделе вы можете увидеть все мои навыки, полученные во время обучения и опыта работы. Я имею большой опыт в графическом дизайне, который мне поможет во Frontend разработке. Также в процессе обучения у меня были проекты связанные с Backend.
+      .skills
+        ul.skills-group
+          each skill in ['Frontend']
+            li.skills-group__item
+              .skills-group__title= skill
+              ul.skills-list
+                - for (var j = 0; j < 4; j++)
+                  li.skills-list__item
+                    .skill
+                      svg(viewbox="0 0 100 100" preserveAspectRatio="none").skill__circle
+                          circle(cx="50" cy="50" r="40").skills__circle-under
+                          circle(cx="50" cy="50" r="40").skills__circle-above
+                      .skill__title HTML5

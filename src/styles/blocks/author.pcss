@@ -1,98 +1,53 @@
 .author {
-	height: 1885px;
-	overflow: hidden;
-	position: relative;
-}
-
-.author__bg {
-	top: 0;
-	width: 100%;
-	position: absolute;
+	height: 100vh;
 }
 
 .author__container {
-  height: 100vh;
   display: flex;
-  align-items: center;
+  height: 100%;
+  flex-direction: column;
 }
 
-.user {
-  width: 30%;
-  margin: 0 auto;
+.author__header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 42px;
+}
+
+.author__logo {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: $text-color;
+  letter-spacing: -0.1rem;
+}
+
+.author__menu {
+  margin: 0 20px;
+}
+
+.author__content {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;  
-  position: relative;
-  &__desc {
-    max-width: 200px;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    align-items: flex-end;
-    opacity: .4;
-    }
-  &__name {
-    font-size: 72px;
-    font-weight: 900;
-    line-height: 4.5rem;
-  }
-  &__scroll {
-    display: inline-flex;
-    align-items: center;
-    .text{
-      font-size: 17px;
-      font-weight: 600;
-      padding-right: 25px;
-    }
-  }
-  item:nth-last-child(){
-    align-self: flex-end;
-  }
-  /* &:nth-last-child(){
-    align-self: flex-end;
-  } */
 }
 
-.about {
-  height: 100vh;
-  width: 67%;
-  margin: 0 auto;
-  padding-top: 60px;
-  position: relative;
+.author__btns {
   display: flex;
-  flex-direction: row;
-  .about__col{
-    &-left{
-      width: 38%;
-    }
-    &-right{
-      width: 62%;
-    }
-    
-  }
-  /* &:nth-child(0){
-    flex: 5;
-  } */
+  justify-content: center;
+  padding: 50px 0;
 }
-
-.author__photo {
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  box-shadow: 22px 24px 53px -39px rgba(0,0,0,0.7);
-
-  .author__avatar {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
+.author__btns-text {
+    font-size: 17px;
+    font-weight: 600;
+    padding-right: 15px;
   }
-}
 
-.block__text {
+
+/* .block__text {
   display: inline-flex;
   margin-top: 75px;
   .transp {
@@ -120,4 +75,4 @@
   p {
 		margin-bottom: 30px;
 	}
-}
+} */

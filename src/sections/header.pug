@@ -1,19 +1,26 @@
-header.header
-  .container.flex.flex__row
-    .header__logo KD
-
+header.header.author__header
+  .author__logo
+    .logo DK
+  .author__menu
     +nav('nav', [
       {title: 'Главная', link: '#'},
-      {title: 'Обо мне', link: '#'},
+      {title: 'Обо мне', link: '#about'},
       {title: 'Навыки', link: '#'},
       {title: 'Работы', link: '#'},
       {title: 'Отзывы', link: '#'},
       {title: 'Связаться', link: '#'}
     ])
 
-    .socials
-      ul.socials__list
-        each social in ["insta", "vk", "github"]
-          li.socials__item
-            a(class=`socials__link.socials__link_${social}` href="#" target="_blank")
-              +icon(`${social}`, `icon_${social}`)
+  .author_links
+    - 
+      var icons = [
+        ['insta', 'https://www.instagram.com/'],
+        ['vk', 'https://vk.com/'],
+        ['github', 'https://github.com/dmitriykryukov'],
+      ]
+    ul.socials
+      each item, index in icons
+        li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+          a(class=`socials__link.socials__link-${item[0]}` href=`${item[1]}` target="_blank")
+            +icon(`${item[0]}`, 'socials__icon')
+    
