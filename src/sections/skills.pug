@@ -1,27 +1,46 @@
-section.section.skills
-  .skills__col.skills__col_left
-    .skills__col-content
-      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").skills__triangle
-        polygon(points="0,0 0,110 1000, 110")
-      +image('content/backpack.png', 'skills-pic')
-  .skills__col.skills__col_right
-    .skills__col-content
-      svg(viewbox="0 0 1000 110" preserveAspectRatio="none").skills__triangle
-        polygon(points="0,110 1000,110 1000,0") 
-      .skills__title
-        .block-title Чем я могу быть вам полезен
-      .skills__text
+section.skills#skills
+  .skills__backgound
+    +image('content/backpack.png', 'backpack-image')
+  .container
+    .values__title
+      h2.values__title-text Чем я могу быть полезен вам
+      .values__desc
         p В данном разделе вы можете увидеть все мои навыки, полученные во время обучения и опыта работы. Я имею большой опыт в графическом дизайне, который мне поможет во Frontend разработке. Также в процессе обучения у меня были проекты связанные с Backend.
-      .skills
-        ul.skills-group
-          each skill in ['Frontend']
-            li.skills-group__item
-              .skills-group__title= skill
-              ul.skills-list
-                - for (var j = 0; j < 4; j++)
-                  li.skills-list__item
-                    .skill
-                      svg(viewbox="0 0 100 100" preserveAspectRatio="none").skill__circle
-                          circle(cx="50" cy="50" r="40").skills__circle-under
-                          circle(cx="50" cy="50" r="40").skills__circle-above
-                      .skill__title HTML5
+    
+      ul.skills-group
+        -
+          var skills = [
+            ['Frontend', ['HTML5', 'CSS', 'Javascript', 'Jquery']],
+            ['Workflow', ['Git', 'Terminal', 'Gulp', Webpack]],
+          ]
+        each skill in skills
+          li.skills-group__item
+            .skills-group__title #{skill[0]}
+            ul.skills-list
+              each item in skill[1]
+                li.skills-list__item
+                  svg(viewbox="0 0 154 154" preserveAspectRatio="none").skill__circle
+                      circle(cx="77" cy="77" r="68").skills__circle-under
+                      circle(cx="77" cy="77" r="68").skills__circle-above
+                  .skill__title #{item}
+
+
+  //- .skills-user
+  //-   ul.skills-user-list
+  //-     - 
+  //-       var skills = [
+  //-         ['Frontend', ['HTML5', 'CSS', 'Javascript']],
+  //-         ['Workflow', ['Git', 'Terminal', 'Gulp']],
+  //-       ]
+  //-     each item in skills 
+  //-       li.user-skills__item.skills-row 
+  //-         h3.skills-row__title #{item[0]}
+  //-         ul.skills-row__list
+  //-           each skill in item[1]
+  //-             li.skills-row__item
+  //-               .skill
+  //-                 svg(viewBox="0 0 154 154" preserveAspectRatio="none").skill__shape
+  //-                   circle(r="68" cx="77" cy="77").skill__circle.skill__circle--position--under
+  //-                   circle(r="68" cx="77" cy="77").skill__circle.skill__circle--position--above
+  //-                   linear-gradient()
+  //-                 .skill__title #{skill}
