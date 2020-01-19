@@ -1,12 +1,22 @@
+.user-logo {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $text-color;
+  letter-spacing: -0.1rem;
+}
+
 .user-info {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  text-align: center;
 }
 .user-info__desc {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   opacity: 0.4;
 }
@@ -15,7 +25,6 @@
   font-size: 72px;
   font-weight: 900;
   line-height: 4.5rem;
-  text-align: center;
 }
 
 .user {
@@ -27,6 +36,24 @@
 .user__avatar {
   width: 200px;
   height: 200%;
-  margin-bottom: 20px;
+  margin-bottom: 75px;
+}
+
+.user__desc {
+  width: 100%;
+}
+
+.user__desc-item {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.user__key {
+  opacity: .4;
+  width: 170px;
+}
+
+.user__value {
+  font-weight: 600;
 }
   

@@ -1,5 +1,6 @@
 .author {
 	height: 100vh;
+  min-height: 650px;
 }
 
 .author__container {
@@ -13,16 +14,9 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding-top: 42px;
+  padding-top: 54px;
 }
 
-.author__logo {
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 900;
-  color: $text-color;
-  letter-spacing: -0.1rem;
-}
 
 .author__menu {
   margin: 0 20px;
@@ -38,41 +32,23 @@
 .author__btns {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  padding-bottom: 112px;
 }
+
+.author__btns-link {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  
+  &:hover {
+    opacity: 0.7;
+    text-decoration:  none;
+    }
+}
+
 .author__btns-text {
     font-size: 17px;
     font-weight: 600;
     padding-right: 15px;
   }
 
-
-/* .block__text {
-  display: inline-flex;
-  margin-top: 75px;
-  .transp {
-    opacity: .4;
-  }
-  .semibold {
-    padding-left: 70px;
-    font-weight: 600;
-  }
-	p {
-		margin-bottom: 20px;
-	}
-}
-
-.about__desc {
-  padding-left: 80px;
-  .user__name-small {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 30px;
-  }
-  .note {
-    font-style: italic;
-  }
-  p {
-		margin-bottom: 30px;
-	}
-} */

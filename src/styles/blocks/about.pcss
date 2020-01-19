@@ -1,7 +1,8 @@
 .about {
-  width: calc((100%/12)*8);
+  max-width: 978px;
+  min-height: 650px;
   padding-bottom: 120px;
-  margin: 52px auto;
+  margin: 52px auto 0;
 }
 .about__container {
   display: flex;
@@ -9,11 +10,25 @@
 }
 
 .about__left {
-  width: calc((100%/12)*3);
-  margin-right: 30px;
+  width: calc((100%/8)*3);
 }
 
-.about__left {
-  width: calc((100%/12)*5);
-  margin-right: 30px;
+.about__right {
+  width: calc((100%/8)*5);
+  padding-left: 64px;
+  line-height: 2;
+}
+
+.about__prolog, .about__text {
+  opacity: 0.5;
+}
+
+.about__title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.about__ps {
+  font-style: italic;
+  padding-top: 135px;
 }
