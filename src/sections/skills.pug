@@ -10,8 +10,8 @@ section.skills#skills
       ul.skills-group
         -
           var skills = [
-            ['Frontend', ['HTML5', 'CSS', 'Javascript', 'Jquery']],
-            ['Workflow', ['Git', 'Terminal', 'Gulp', Webpack]],
+            ['Front-end', ['HTML5', 'CSS', 'Javascript', 'Jquery']],
+            ['Workflow', ['Git', 'Terminal', 'Gulp', "Webpack"]],
           ]
         each skill in skills
           li.skills-group__item
@@ -20,27 +20,6 @@ section.skills#skills
               each item in skill[1]
                 li.skills-list__item
                   svg(viewbox="0 0 154 154" preserveAspectRatio="none").skill__circle
-                      circle(cx="77" cy="77" r="68").skills__circle-under
-                      circle(cx="77" cy="77" r="68").skills__circle-above
+                    circle(cx="77" cy="77" r="67").skills__circle-under
+                    circle(cx="77" cy="77" r="67").skills__circle-above
                   .skill__title #{item}
-
-
-  //- .skills-user
-  //-   ul.skills-user-list
-  //-     - 
-  //-       var skills = [
-  //-         ['Frontend', ['HTML5', 'CSS', 'Javascript']],
-  //-         ['Workflow', ['Git', 'Terminal', 'Gulp']],
-  //-       ]
-  //-     each item in skills 
-  //-       li.user-skills__item.skills-row 
-  //-         h3.skills-row__title #{item[0]}
-  //-         ul.skills-row__list
-  //-           each skill in item[1]
-  //-             li.skills-row__item
-  //-               .skill
-  //-                 svg(viewBox="0 0 154 154" preserveAspectRatio="none").skill__shape
-  //-                   circle(r="68" cx="77" cy="77").skill__circle.skill__circle--position--under
-  //-                   circle(r="68" cx="77" cy="77").skill__circle.skill__circle--position--above
-  //-                   linear-gradient()
-  //-                 .skill__title #{skill}

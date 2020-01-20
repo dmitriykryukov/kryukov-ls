@@ -1,0 +1,36 @@
+section.works#works
+  .container
+    h2.section-title Мои работы
+    .works__contente
+      .works__left
+        .slider
+          +image('content/work1.jpg', 'slider__fillpic')
+          //- .slider__preview
+          //-   ul.previews
+          //-     - for (var i = 1; i <= 4; i++)
+          //-       li.previews__item
+          //-         +image(`content/work${i}.jpg`, 'previews__pic')
+          .slider__buttons
+            .slider-button
+              button.slider-buttons__item
+                .icon-arrow.slider-buttons__item--slide--prev
+              button.slider-buttons__item
+                .icon-arrow.slider-buttons__item--slide--next
+
+      .works__right
+        .works__tags
+          - var tags = ['HTML', 'CSS', 'Javascript']
+            ul.tags
+              each tag in tags
+                li.tags__item #{tag}
+        .works__text
+          h3.works__title Сайт школы образования
+          .works__desc-text
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam dolorum nulla placeat cumque nostrum commodi ad numquam dolores distinctio officiis molestiae.
+          a(href="#").iconed-link
+            .icon-link
+            .iconed-link__text Посмотреть сайт
+
+          //-   a(href="#about").author__btns-link
+          //- .author__btns-text Скролл
+          //- .icon-scroll
