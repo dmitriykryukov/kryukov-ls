@@ -5,17 +5,17 @@ section.works#works
       .works__left
         .slider
           +image('content/work1.jpg', 'slider__fillpic')
-          //- .slider__preview
-          //-   ul.previews
-          //-     - for (var i = 1; i <= 4; i++)
-          //-       li.previews__item
-          //-         +image(`content/work${i}.jpg`, 'previews__pic')
-          .slider__buttons
-            .slider-button
-              button.slider-buttons__item
-                .icon-arrow.slider-buttons__item--slide--prev
-              button.slider-buttons__item
-                .icon-arrow.slider-buttons__item--slide--next
+          .slider__preview
+            ul.previews
+              - for (var i = 1; i <= 4; i++)
+                li.previews__item
+                  +image(`content/work${i}.jpg`, 'previews__pic')
+          .numbwer__works 4 
+        .slider-buttons
+          button.slider-buttons__item
+            .icon-arrow.slider-buttons__item--prev
+          button.slider-buttons__item
+            .icon-arrow.slider-buttons__item--next
 
       .works__right
         .works__tags
@@ -30,7 +30,9 @@ section.works#works
           a(href="#").iconed-link
             .icon-link
             .iconed-link__text Посмотреть сайт
-
-          //-   a(href="#about").author__btns-link
-          //- .author__btns-text Скролл
-          //- .icon-scroll
+  .triangles-reverse
+    svg.triangles-reverse__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+      polygon(points="0,0 1000,100 1000,0")
+    svg.triangles-reverse__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+      polygon(points="0,0 0,100 1000,0")
+      

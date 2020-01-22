@@ -1,0 +1,15 @@
+section.feedback#feedback
+  .container
+    h2.section-title Связаться со мной
+    form.feedback_form(action="submit")
+      .feedback__input-name
+        label.label(for='fullname') Введите ваше имя
+        input#name.form-control(type='text', placeholder='Полное имя' name='fullname')
+      .feedback__input-email
+        label.label(for='email') Введите ваше email
+        input#email.form-control(type='text', placeholder='email@mail.com' name='email')
+      .feedback__input-message
+        label.label(for='message') Сообщение к письму
+        input#message.form-control(type='text', placeholder='Полное имя' name='message')
+      input(type="submit", value="Отправить")
+    

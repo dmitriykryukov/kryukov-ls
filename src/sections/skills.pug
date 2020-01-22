@@ -1,8 +1,8 @@
 section.skills#skills
-  .skills__backgound
-    +image('content/backpack.png', 'backpack-image')
+  .skills__background
+    +image('content/backpack.png', 'skills__background-image')
   .container
-    .values__title
+    .values
       h2.values__title-text Чем я могу быть полезен вам
       .values__desc
         p В данном разделе вы можете увидеть все мои навыки, полученные во время обучения и опыта работы. Я имею большой опыт в графическом дизайне, который мне поможет во Frontend разработке. Также в процессе обучения у меня были проекты связанные с Backend.
@@ -10,8 +10,8 @@ section.skills#skills
       ul.skills-group
         -
           var skills = [
-            ['Front-end', ['HTML5', 'CSS', 'Javascript', 'Jquery']],
-            ['Workflow', ['Git', 'Terminal', 'Gulp', "Webpack"]],
+            ['Front-end', [['HTML5', 85], ['CSS', 75],    ['Javascript', 65], ['Jquery', 50]]],
+            ['Workflow', [['Git', 79],['Terminal',80], ['Gulp', 30], ["Webpack", 20]]],
           ]
         each skill in skills
           li.skills-group__item
@@ -19,7 +19,13 @@ section.skills#skills
             ul.skills-list
               each item in skill[1]
                 li.skills-list__item
-                  svg(viewbox="0 0 154 154" preserveAspectRatio="none").skill__circle
-                    circle(cx="77" cy="77" r="67").skills__circle-under
-                    circle(cx="77" cy="77" r="67").skills__circle-above
-                  .skill__title #{item}
+                  svg(viewbox="0 0 200 200" preserveAspectRatio="none").skill__svg-shape
+                    circle(cx="100" cy="100" r="80").skills__circle--under
+                    circle(cx="100" cy="100" r="80" style=`animation-delay: -${item[1]}s`).skills__circle--above
+                  .skill__title #{item[0]}
+
+      //- linear-gradient
+      svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
+        linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+          stop(offset="0%" stop-color='#4a00ed')
+          stop(offset="100%" stop-color='#9300e8') 
