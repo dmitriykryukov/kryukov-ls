@@ -11,8 +11,7 @@ section.feedback#feedback
         +icon('envelope', 'input__icon')
         input.form-control.feedback__input-email(type='text', placeholder='Email@mail.com' name='email' autocomplete='off' required)
       .feedback__input
-        label.feedback__input-label(for='message') Введите ваше email
+        label.feedback__input-label(for='message') Сообщение к письму
         +icon('message', 'input__icon')
-        input.form-control.feedback__input-message(type='text', placeholder='Введите свое сообщение...' name='message' autocomplete='off' required)
+        textarea.form-control.feedback__input-message(type='text', placeholder='Введите свое сообщение...' name='message' cols="30" rows="10")
       input(type="submit", value="Отправить").feedback-btn__submit
-    

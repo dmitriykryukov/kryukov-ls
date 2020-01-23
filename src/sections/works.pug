@@ -6,10 +6,11 @@ section.works#works
         .slider
           +image('content/work1.jpg', 'slider__fillpic')
           .slider__preview
-            ul.previews
+            ul.previews__list
               - for (var i = 1; i <= 4; i++)
                 li.previews__item
-                  +image(`content/work${i}.jpg`, 'previews__pic')
+                  a(class='previews__item-link' href="#")
+                    +image(`content/work${i}.jpg`, 'previews__pic')
           .numbwer__works 4 
         .slider-buttons
           button.slider-buttons__item
