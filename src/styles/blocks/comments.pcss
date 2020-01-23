@@ -18,12 +18,32 @@
  &-item {
     max-width: 476px;
     padding-left: 125px;
+    position: relative;
+    
+    &--icon {
+      position: absolute;
+      opacity: .05;
+      width: 75px;
+      height: 75px;
+      left: 20px;
+      color: $text-color;
+    }
 
     &--desc {
       opacity: 0.5;
       font-weight: 600;
       line-height: 1.9;
       margin-bottom: 20px;
+
+      /* &::before {
+        content: "";
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        /* background-image: url("./image/icons/quote.svg"); */
+        /* background-color: red; */
+      /* } */ 
+
     }
 
     &--author {
@@ -31,9 +51,7 @@
       align-items: center;
     }
 
-    &:before {
-      content: aaa;
-    }
+    
   }
 
   .author__avatar {
