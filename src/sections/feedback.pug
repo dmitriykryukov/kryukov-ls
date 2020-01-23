@@ -1,15 +1,18 @@
 section.feedback#feedback
   .container
-    h2.section-title Связаться со мной
-    form.feedback_form(action="submit")
-      .feedback__input-name
-        label.label(for='fullname') Введите ваше имя
-        input#name.form-control(type='text', placeholder='Полное имя' name='fullname')
-      .feedback__input-email
-        label.label(for='email') Введите ваше email
-        input#email.form-control(type='text', placeholder='email@mail.com' name='email')
-      .feedback__input-message
-        label.label(for='message') Сообщение к письму
-        input#message.form-control(type='text', placeholder='Полное имя' name='message')
-      input(type="submit", value="Отправить")
+    h2.section-title.section-title__footer Связаться со мной
+    form.feedback__form(action="submit")
+      .feedback__input
+        label.feedback__input-label(for='fullname') Введите ваше имя
+        +icon('user', 'input__icon')
+        input.form-control.feedback__input-name(type='text', placeholder='Полное имя' name='fullname' autocomplete='off' required)
+      .feedback__input
+        label.feedback__input-label(for='email') Введите ваше email
+        +icon('envelope', 'input__icon')
+        input.form-control.feedback__input-email(type='text', placeholder='Email@mail.com' name='email' autocomplete='off' required)
+      .feedback__input
+        label.feedback__input-label(for='message') Введите ваше email
+        +icon('message', 'input__icon')
+        input.form-control.feedback__input-message(type='text', placeholder='Введите свое сообщение...' name='message' autocomplete='off' required)
+      input(type="submit", value="Отправить").feedback-btn__submit
     

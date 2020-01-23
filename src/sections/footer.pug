@@ -1,28 +1,29 @@
 footer.footer
   .container.footer-container
     .year-created &#169; 2020
-    .user-info
-      h2.user-info__username--footer Дмитрий Крюков
-      .user-info__desc--footer Личный сайт веб разработчика
+    .user-info__footer
+      h2.user-info__footer-name Дмитрий Крюков
+      .user-info__footer-desc Личный сайт<br> веб разработчика
     .menu-info
-      +nav('nav', [
-        {title: 'Главная', link: '#author'},
-        {title: 'Обо мне', link: '#about'},
-        {title: 'Навыки', link: '#skills'},
-        {title: 'Работы', link: '#works'},
-        {title: 'Отзывы', link: '#comments'},
-        {title: 'Связаться', link: '#feedback'}
-      ])
+      .menu-info__nav
+        +nav('nav', [
+          {title: 'Главная', link: '#author'},
+          {title: 'Обо мне', link: '#about'},
+          {title: 'Навыки', link: '#skills'},
+          {title: 'Работы', link: '#works'},
+          {title: 'Отзывы', link: '#comments'},
+          {title: 'Связаться', link: '#feedback'}
+        ])
       .menu-info__desc
-        .menu-info__desc--socials
+        .menu-info__socials
           .desc-text
-            | Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+            | Этот сайт я сделал в рамках обучения в<br> Школе онлайн образования Loftschool
           ul.socials.desc-socials
             each item, index in icons
-              li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+              li.socials__item.socials__item-footer(class=`${index === 1 ? 'active' : ''}`)
                 a(class=`socials__link.socials__link-${item[0]}` href=`${item[1]}` target="_blank")
-                  +icon(`${item[0]}`, 'socials__icon')
-        .menu-info__desc--citation
-          .desc__citation--text
+                  +icon(`${item[0]}`, 'socials__icon socials__icon-footer')
+        .menu-info__citation
+          .desc-text
             | Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
           .desc__citation--signature Martin Golding

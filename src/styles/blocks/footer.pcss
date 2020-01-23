@@ -2,31 +2,66 @@
   height: 407px;
   background-color: #1f232d;
   color: #fff;
-  padding-top: 100px;
+  padding-top: 94px;
   position: relative;
 }
 
+.footer-container {
+  display: flex;
+}
+
 .year-created {
+  opacity: .10;
   font-size: 47px;
   font-weight: 600;
   width: 222px;
   display: inline-block;
 }
 
-.user-info {
-  width: 253px;
+.user-info__footer {
+  width: 283px;
+  padding-right: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 
-  &___username--footer {
-
+  &-name {
+    height: 85px;
   }
 
-  &__desc--footer {
-
+  &-desc {
+    opacity: .15;
   }
 }
 
 .menu-info {
   width: 977px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__nav {
+    height: 85px;
+  }
+  
+  &__desc {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.menu-info__socials {
+  width: 100%;
+}
+
+.desc-text {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.desc-socials {
+ 
 }
