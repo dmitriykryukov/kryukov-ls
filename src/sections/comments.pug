@@ -1,0 +1,31 @@
+section.comments#comments
+  .container.comments-container
+    .comments-container__head
+      h2.section-title.section-title--comments Что обо мне говорят
+      .slider-buttons
+        button.slider-buttons__comments
+          .icon-arrow.slider-buttons__comments--prev
+        button.slider-buttons__comments
+          .icon-arrow.slider-buttons__comments--next.
+    .slideshow__comments
+      .slideshow__comments-item
+        +icon('quote', 'slideshow__comments-item--icon')
+        .slideshow__comments-item--desc
+          | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+        .slideshow__comments-item--author
+          .avatar.author__avatar
+            +image("content/user.jpg", "avatar__pic")
+          .author__info
+            h2.author__name Ковальчук Дмитрий
+            .author__position Основатель Loftschool
+      .slideshow__comments-item
+        +icon('quote', 'slideshow__comments-item--icon')
+        .slideshow__comments-item--desc
+          | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+        .slideshow__comments-item--author
+          .avatar.author__avatar
+            +image("content/user.jpg", "avatar__pic")
+          .author__info
+            h2.author__name Ковальчук Дмитрий
+            .author__position Основатель Loftschool
+          

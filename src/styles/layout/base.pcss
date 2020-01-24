@@ -9,6 +9,8 @@ html {
 body,
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -30,11 +32,20 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
+  @include desktop {
+    width: 83%;
+  }  
   @include phones {
     width: 85%;
   }
+}
+
+.conclusion {
+  position: relative;
+  min-height: 1460px;
+  overflow: hidden;
+  margin-top: -90px;
 }
 
 .fullscreen-section {
@@ -80,6 +91,12 @@ button[type="button"] {
 a {
   color: inherit;
   cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  &:hover {
+     text-decoration: underline;
+     text-decoration-color: $text-color;
+  }
 }
 
 img {

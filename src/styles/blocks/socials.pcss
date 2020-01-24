@@ -1,0 +1,44 @@
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  margin-right: 40px;
+
+  &-footer {
+    padding: 15px 15px;
+    border: 1px solid $text-color;
+    border-radius: 50%;
+    margin-right: 16px;
+
+    &:hover {
+    opacity: 0.5;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__icon {
+  fill: $text-color;
+  width: 28px;
+  height: 28px;
+  display: block;
+  
+  &-footer {
+    width: 20px;
+    height: 20px;
+  }
+ 
+
+  &:hover {
+    opacity: 0.5;
+    }
+}
+
+.desc__citation--signature {
+  font-style: italic;
+}

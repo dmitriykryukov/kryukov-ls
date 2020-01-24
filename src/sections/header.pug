@@ -1,0 +1,26 @@
+header.header.author__header
+  .author__logo
+    .user-logo DK
+  .author__menu
+    +nav('nav', [
+      {title: 'Главная', link: '#author'},
+      {title: 'Обо мне', link: '#about'},
+      {title: 'Навыки', link: '#skills'},
+      {title: 'Работы', link: '#works'},
+      {title: 'Отзывы', link: '#comments'},
+      {title: 'Связаться', link: '#feedback'}
+    ])
+
+  .author_links
+    - 
+      var icons = [
+        ['insta', 'https://www.instagram.com/'],
+        ['vk', 'https://vk.com/'],
+        ['github', 'https://github.com/dmitriykryukov'],
+      ]
+    ul.socials
+      each item, index in icons
+        li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+          a(class=`socials__link.socials__link-${item[0]}` href=`${item[1]}` target="_blank")
+            +icon(`${item[0]}`, 'socials__icon')
+    
