@@ -9,11 +9,29 @@ html(lang="en")
     title Portfolio | Dmitriy Kryukov
 
   body
-    .wrapper    
-      include ./sections/author.pug
-      include ./sections/skills.pug
-      include ./sections/works.pug
-      include ./sections/conclusion.pug
+    .wrapper
+      .maincontent    
+        include ./sections/author.pug
+
+        //- TRIANGLE TOP
+        .triangles.triangles_top
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,100 1000,100 1000,0")
+            
+        .middle-section
+          include ./sections/skills.pug
+          include ./sections/works.pug
+        
+        //- TRIANGLE BOTTOM
+        .triangles.triangles_bottom
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 1000,0 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,0 0,100 1000,0")
+
+        include ./sections/conclusion.pug
 
       include ./sections/footer.pug
         

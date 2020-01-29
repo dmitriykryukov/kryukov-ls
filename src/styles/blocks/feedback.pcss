@@ -1,5 +1,5 @@
 .feedback {
-  padding-top: 192px;
+  padding: 192px 0 100px;
 }
 
 .feedback__form{
@@ -8,12 +8,20 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @include tablets {
+    width: 100%
+  }
+
+   @include phones {
+    flex-direction: column;
+  }
 }
 
 .feedback__input {
   display: flex;
   flex-direction: column;
-  width: 410px;
+  width: 48%;
   padding-left: 47px;
   position: relative;
   border-bottom: 1px solid $text-color;
@@ -30,7 +38,6 @@
     &:hover {
       opacity: .3;
     }
-    
   }
 
   &-label {
@@ -53,12 +60,23 @@
       opacity: .3;
     }
   }
+
+   @include phones {
+    width: 100%;
+    margin-bottom: 57px;
+  }
   
   &:nth-child(3){
     width: 100%;
     margin-bottom: 57px;
     margin-top: 35px;
+
+    @include phones {
+      margin-top: 0;
+    }
   }
+
+  
   
 }
 
@@ -75,6 +93,13 @@
   line-height: 2.67;
   text-transform: uppercase;
   
+  @include tablets {
+      margin: 0 auto;
+    }
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .input__icon {

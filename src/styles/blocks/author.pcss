@@ -1,6 +1,11 @@
 .author {
-	height: 100vh;
-  min-height: 650px;
+	padding-top: 54px;
+  position: relative;
+
+  @include tablets {
+    padding-top: 60px;
+  }
+
 }
 
 .author__container {
@@ -9,47 +14,87 @@
   flex-direction: column;
 }
 
-.author__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding-top: 54px;
+.author__menu {
+   width: 52%;
+
+  @include desktop {
+    width: 75%;
+  }
+
+  @include tablets {
+    display: none;
+  }
 }
 
-
-.author__menu {
-  margin: 0 20px;
+.author_links {
+  @include phones {
+    display: none;
+  }
 }
 
 .author__content {
-  flex: 1;
+  flex: .85;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 27%;
+
+  @include desktop {
+    flex: .94;
+    padding: 0 10%;
+  }
+  @include tablets {
+    flex: .65;
+    padding: 0 30%;
+  }
+
+  @include phones {
+    padding: 0;
+  }
 }
 
-.author__btns {
+.author__downbtn {
+  position: absolute;
+  bottom: 10.5%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
-  padding-bottom: 112px;
-}
 
-.author__btns-link {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  @include desktop {
+    bottom: 5%;
+  }
+
+  @include tablets {
+    display: none;
+  }
   
+  @include phones {
+    display: none;
+  }
+
+}
+
+.author__downbtn-link {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:after {
+    content: "";
+    display: block;
+    background: svg-load('scroll.svg', fill=$text-color, width=100%, height=100%) center center no-repeat;
+    width: 28px;
+    height: 30px;
+    margin-left: 20px;
+  }
+
   &:hover {
     opacity: 0.5;
-    text-decoration:  none;
-    }
-}
-
-.author__btns-text {
-    font-size: 17px;
-    font-weight: 600;
-    padding-right: 15px;
   }
+
+}
 

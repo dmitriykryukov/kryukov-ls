@@ -1,46 +1,47 @@
 .welcome-sectionn
-  .parallax
-    +image("content/Mountain-Baloon.jpg", "parallax__image")
-  section.author#author
+  section.parallax.parallax--mountians
+    +image("content/Mountain_1800.jpg", "parallax__image")
+    //- +image("bg/baloon_768.jpg", "parallax__image")
+  
+  section.fullscreen-section.author#author
     .container.author__container
       include ../sections/header.pug
       .author__content
         .user-info
-          .user-info__desc Личный сайт<br>веб разработчика
-          h2.user-info__username Дмитрий<br>Крюков
-      .author__btns
-        a(href="#about").author__btns-link
-          .author__btns-text Скролл
-          .icon-scroll
+          .user-info__desc Личный сайт #[span.user-info__occ веб разработчика]
+          .user-info__username Дмитрий Крюков
+      .author__downbtn
+        a(href="#about").author__downbtn-link Скролл
   
   section.about#about
-    .about__container
-      .about__left
-        .user
-          .avatar.user__avatar
-            +image("content/user.jpg", "avatar__pic")
-          ul.user__desc
-            - 
-              var items = [
-                ['Проживаю', 'Канада, Монреаль'],
-                ['Возраст', '40'],
-                ['Родился', '19 января 1980'],
-              ]
-            each item in items
-              li.user__desc-item
-                .user__key #{item[0]}
-                .user__value #{item[1]}
-      .about__right
-        .about__prolog Привет меня зовут
-        h1.about__title Дмитрий Крюков
-        .about__text До веб разработки я был графическим дизайнером.
-        .about__ps * Этот сайт я разработал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
+    .container
+      .about__columns
+        .about__user
+          .user
+            .user__avatar
+              .user__avatar-wrapper
+                +image("content/user.jpg", "avatar__pic")
+            .user__desc
+              - 
+                var userdata = [
+                  ['Проживаю', 'Канада, Монреаль'],
+                  ['Возраст', '40 лет'],
+                  ['Родился', '19 января 1980'],
+                ]
+              table.user__table
+                each item in userdata
+                  tr
+                    td.user__table-title #{item[0]}
+                    td.user__table-content #{item[1]}
+        .about__user-text
+          .about__user-text--content
+            .about__prolog Привет меня зовут
+            h1.about__title Дмитрий Крюков
+            .about__text
+              p До веб разработки я был графическим дизайнером.
+          .about__ps Этот сайт я разработал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
 
-  .triangles
-    svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-      polygon(points="0,0 0,100 1000,100")
-    svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-      polygon(points="0,100 1000,100 1000,0")
+  
               
       
 
