@@ -13,7 +13,7 @@ section.works#works
               ul.works-slider__thumbs
                 - for (var i = 1; i <= 4; i++)
                   li.works-slider__thumb-item
-                    a(class='works-slider__thumb-link' href="#")
+                    button(class='works-slider__thumb-link')
                       +image(`content/work${i}.jpg`, 'works-slider__thumb')
         .works-slider__data
           - var tags = ['HTML', 'CSS', 'Javascript']
