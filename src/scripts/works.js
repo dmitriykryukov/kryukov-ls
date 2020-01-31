@@ -19,7 +19,7 @@ const display = {
   computed: {
     reversedWorks() {
       return [...this.works].reverse();
-    },
+    }
 
   }
 }
@@ -78,6 +78,14 @@ new Vue ({
           this.currentIndex--;
           break;
       }
+    },
+
+    handleBtnImage(workId) {
+      this.works.forEach((element, index) => {
+        if (element.id === workId) {
+          return this.currentIndex = index;
+        }
+      });
     }
   },
 
