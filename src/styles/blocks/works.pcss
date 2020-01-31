@@ -158,6 +158,13 @@
   display: block;
   position: relative;
 
+  &.disabled {
+    opacity: .7;
+    filter: grayscale(100%);
+    pointer-events: none;
+    user-select: none;
+  }
+
   &:before {
     content: "";
     background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;

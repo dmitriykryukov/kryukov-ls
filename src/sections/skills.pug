@@ -8,24 +8,3 @@ section.skills#skills
             p В данном разделе вы можете увидеть все мои навыки, полученные во время обучения и опыта работы. Я имею большой опыт в графическом дизайне, который мне поможет во Frontend разработке. Также в процессе обучения у меня были проекты связанные с Backend.
       .skills__widget
         #skills-component
-        //- .skills__content
-        //-   ul.skills-group
-        //-     -
-        //-       var skills = [
-        //-         ['Front-end', [['HTML5', 85], ['CSS', 75],    ['Javascript', 65], ['Jquery', 50]]],
-        //-         ['Workflow', [['Git', 79],['Terminal',80], ['Gulp', 30], ["Webpack", 20]]],
-        //-       ]
-        //-     each skill in skills
-        //-       li.skills-row
-        //-         .skills-row__title #{skill[0]}
-        //-         ul.skills-row__list
-        //-           each item in skill[1]
-        //-             li.skills-row__item
-        //-               .skill
-        //-                 svg(viewbox="0 0 200 200" preserveAspectRatio="none").skill__svg-shape
-        //-                   circle(cx="100" cy="100" r="80").skills__circle.skills__circle--under
-        //-                   circle(cx="100" cy="100" r="80" style=`animation-delay: -${item[1]}s` ref="color-circle").skills__circle.skills__circle--above
-        //-                   linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-        //-                     stop(offset="0%" stop-color='#4a00ed')
-        //-                     stop(offset="100%" stop-color='#9300e8')
-        //-                 .skill__title #{item[0]}
