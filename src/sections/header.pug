@@ -18,3 +18,18 @@ header.header
           a(class=`socials__link` href=`${item[1]}` target="_blank")
             +icon(`${item[0]}`, 'socials__icon')
     
+  .menu-toggle
+    input(type="checkbox").menu-burger
+    span.layer
+    span.layer
+    span.layer
+
+    .menu-list
+      +nav('menu-column', 'menu__toggle')
+      .menu-toggle__socials
+        ul.socials
+        each item, index in icons
+          li.socials__item.socials__item-toggle(class=`${index === 1 ? 'active' : ''}`)
+            a(class=`socials__link` href=`${item[1]}` target="_blank")
+              +icon(`${item[0]}`, 'socials__icon')
+        
