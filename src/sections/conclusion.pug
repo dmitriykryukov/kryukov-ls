@@ -1,8 +1,9 @@
 .conclusion
-  //- .parallax.
-  //-   +image("content/Budda_1800.jpg", "parallax-down__image")
-  .parallax.parallax--budda
-    +image("content/Budda.jpg", "parallax__image-budda")
+  section.parallax-down
+    - for (var i = 1; i <= 4; i++)
+      .parallax-down__layer(data-speed=`${0.1 + (i/2.5)/10}`)
+        picture
+          img(srcset=require(`images/parallax/budda_${i}.${i === 1 ? 'jpg' : 'png'}`)).parallax-down__image
     
 
   include ../sections/comments.pug

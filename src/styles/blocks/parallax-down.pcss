@@ -1,0 +1,77 @@
+.parallax-down {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @include tablets {
+      display: none
+    }    
+
+    @include phones {
+      display: none;
+    }
+}
+
+.parallax-down__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  will-change: transform;
+  
+  &:nth-child(1) {
+    display: block;
+    .parallax-down__image {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      min-width: 2560px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+   &:nth-child(2) {
+    display: block;
+    .parallax-down__image {
+      object-fit: cover;
+      top: 580px;
+      width: 100%;
+      min-width: 2560px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:nth-child(3) {
+    display: block;
+    .parallax-down__image {
+      left: 50%;
+      top: 380px;
+      transform: translateX(200px);
+    }
+  }
+
+    &:nth-child(4) {
+    display: block;
+    .parallax-down__image {
+      object-fit: cover;
+      width: 100%;
+      min-width: 2560px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+  }
+}
+
+
+.parallax-down__image {
+  max-width: initial;
+  max-height: initial;
+  position: absolute;
+}
