@@ -9,19 +9,25 @@
   font-weight: bold;
   margin-bottom: 92px;
 
-  &--comments {
+  &--reviews {
     margin-bottom: 0;
     display: inline-flex;
     margin-right: 92px;
+
+  @include phones {
+    margin-bottom: 40px;
+    text-align: center;
+    margin-right: 0;
+  } 
+
   }
 
   &__footer {
     margin-bottom: 78px;
+    text-align: center;
   }
 
-  @include desktop {
-    margin-bottom: 60px;
-  } 
+  
 }
 
 .works__section-title {
