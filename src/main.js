@@ -9,9 +9,3 @@ import "./scripts/parallax";
 import "./scripts/reviews";
 
 
-// window.onscroll = function() {
-//   var wScroll = window.pageYOffset;
-
-//   console.log(wScroll);
-  
-// }
