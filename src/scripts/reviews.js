@@ -14,6 +14,7 @@ new Vue ({
   data() {
     return {
       reviews: [],
+      activePage: 0,
     }
   },
 
@@ -29,10 +30,12 @@ new Vue ({
     slide(direction){
       switch(direction) {
         case "next":
-          console.log(direction);
+          flkty.next();
+          console.log(flkty.selectedIndex);
+          
           break;
         case "prev":
-          console.log(direction);
+          flkty.previous();
           break;
       }
     },
@@ -57,6 +60,7 @@ var flkty = new Flickity( elem, {
  groupCells: 2,
  pageDots: false,
  wrapAround: false,
+ 
 
 //  initialIndex: 3,
 //         prevNextButtons: true,
