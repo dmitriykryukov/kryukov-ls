@@ -8,16 +8,24 @@
               img(src="../../images/content/user.jpg").user__pic-avatar
             .user-name 
               span Дмитрий Крюков
-              a.exit-btn Выйти
+              button(type="button" @click="logoutTheUser").exit-btn Выйти
           .header__title Панель администрирования
-        a.exit-btn Выйти
+        button(type="button" @click="logoutTheUser").exit-btn Выйти
 </template>
 
 <script>
 
-export default {
-  
-};
+import { mapActions } from 'vuex';
+
+  export default {
+    methods: {
+      ...mapActions('user', ['logoutUser']),
+      async logoutTheUser () {
+        await this.logoutUser();
+        await this.$router.push('/login')
+      }
+    }
+  }
 </script>
 
 
@@ -83,7 +91,7 @@ export default {
 }
 
 .exit-btn {
-  opacity: 0.7;
+  color: rgba(255, 255, 255, .5);
   text-decoration: underline;
   font-size: 14px;
 

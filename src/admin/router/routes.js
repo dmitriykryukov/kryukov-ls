@@ -39,8 +39,6 @@ export default [
     path: "/login",
     components: {
       default: () => import('../components/pages/login.vue'),
-      tabs: Tabs,
-      header: Header
     },
     meta: {
       public: true

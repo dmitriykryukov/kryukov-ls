@@ -5,16 +5,15 @@
       router-view(name="tabs")
       .content-container(:class="{ 'content-container--dark': $route.path === '/login' }")
         router-view
+      vc-tooltip()
 </template>
 
 <script>
-
-export default {
-  components: {
-    
-  }
-  
-};
+ export default {
+    components: {
+      vcTooltip: () => import('./components/tooltip.vue')
+    }
+  };
 </script>
 
 

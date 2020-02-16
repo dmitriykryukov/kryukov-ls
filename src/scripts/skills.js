@@ -1,10 +1,14 @@
 import Vue from "vue";
+import axios from "axios";
+
+const $axios = axios.create ({
+  baseURL: 'https://webdev-api.loftschool.com/'
+});
 
 const skill = {
   template: "#skill",
   props: {
-    skillName: String,
-    skillPercent: Number
+    skill: Object
   },
   data() {
     return {
@@ -13,7 +17,7 @@ const skill = {
   },
 
   created() {
-    const data =this.skillPercent;
+    const data =this.skill.percent;
     this.animatDelay = data;
   }
 
@@ -45,8 +49,9 @@ new Vue({
     
   },
 
-  created() {
-    const data = require("../data/skills.json");
+  async created() {
+    // const data = require("../data/skills.json");
+    const { data } = await $axios.get("/categories/282");
     this.skills = data;
   }
 });
