@@ -39,6 +39,15 @@ export default {
 @import '../../styles/mixins.pcss';
 
 .tooltip {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #4bb133;
+  padding: 22px;
+
   &-container {
     width: 100%;
     display: flex;
@@ -55,16 +64,7 @@ export default {
       visibility: visible;
     }
   }
-
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  background: #4bb133;
-  padding: 22px;
-
+  
   @include phones {
     max-width: 100%;
   }

@@ -2,87 +2,69 @@
   .page__container
     .page__header
       .page__columns
-        h2.page-title Блок «Отзывы»
+        h1.page-title.works__title Блок «Отзывы»
     .page__content
-      .page__row
-        .card
-          .card__header
-            .card__column
-              .page-subtitle Новый отзыв
-          .card__content
-            form.edit-form.edit-form--reviews.form--strong
-              .edit-form__column
-                input#upload-pic.edit-form__file(type='file' name='reviews-image')
-                .edit-form__row
-                  .edit-form__frame
-                .edit-form__row
-                  .edit-form__button
-                    label.btn.btn--link(for='upload-pic') Добавить фото
-                .input-tooltip
-              .edit-form__column
-                .edit-form__row-double
-                  .edit-form__row
-                    .input(data-v-b4a4ba36='' )
-                      label.input__label( for='input__author') Имя автора
-                      .input__wrapper
-                        input#input__author.input__element(data-v-b4a4ba36='' autocomplete='off' type='text' name='author' placeholder='Ковальчук Дмитрий')
-                      .input-tooltip
-                  .edit-form__row
-                    .input
-                      label.input__label( for='input__occ') Титул автора
-                      .input__wrapper
-                        input#input__occ.input__element(autocomplete='off' type='text' name='occ' placeholder='Основатель LoftSchool')
-                      .input-tooltip
-                .edit-form__row
-                  .input
-                    label.input__label(for='input__text') Отзыв
-                    .input__wrapper
-                      textarea#input__text.input__element(name='text' placeholder='Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!')
-                    .input-tooltip
-                .edit-form__row
-                  .controls.edit-form__btns
-                    .controls__btn
-                      button.btn.btn--link(type='reset') Отмена
-                    .controls__btn
-                      button.btn.btn--gradient(type='submit') Сохранить
+      .page__row(v-if="showAddingCard")
+        vc-reviews-add-new(:review="review" @hideAddingCard="hideAddingCard")
       .page__row
         ul.reviews__list
           li.reviews__item
             .card.card--add
-              button.btn.btn--add.btn--xbig(type='button')
-          li.reviews__item
-            .card
-              .card__header
-                .user
-                  .user__column
-                    .avatar.avatar--50
-                  .user__column
-                    .user__row.user__name Ковальчук Дмитрий
-                    .user__row.user__occ Основатель Loftschool
-              .card__content
-                .reviews__row
-                  p 
-                    | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-              .card__footer
-                .controls
-                  .controls__btn
-                    button.btn-tool.btn-tool--edit( type='button') Править
-                  .controls__btn
-                    button.btn-tool.btn-tool--cross( type='button') Удалить
-
-      
+              button(type="button" @click="showAddingCard = true").btn.btn--add.btn--xbig
+          li(v-for="review in getReviews" :key="review.id").reviews__item
+            vc-reviews-item(:review="review" @editReview="editReview" @hideAddingCard="hideAddingCard")
 </template>
 
+
 <script>
+import { mapGetters, mapActions, mapState } from 'vuex';
+
 export default {
+  data: () => ({
+    showAddingCard: false,
+    review: {
+      author: '',
+      occ: '',
+      text: '',
+      photo: ''
+    }
+  }),
   components: {
+    vcInput: () => import('../input.vue'),
+    vcReviewsAddNew: () => import('../reviews-add-new.vue'),
+    vcReviewsItem: () => import('../reviews-item.vue'),
     
   },
-  
+  methods: {
+    ...mapActions('reviews', ['loadReviews']),
+    hideAddingCard () {
+      this.showAddingCard = false;
+      this.review = { ...{
+          author: '',
+          occ: '',
+          text: '',
+          photo: ''
+        } }
+    },
+    editReview (payload) {
+      this.review = payload;
+      this.showAddingCard = true;
+    }
+  },
+  computed: {
+    ...mapGetters('reviews', ['getReviews']),
+    ...mapState('user', {
+      userID: state => state.user.id
+    })
+  },
+  created () {
+    this.loadReviews(this.userID);
+  }
 };
 </script>
 
-<style lang="pcss">
+
+<style lang="pcss" scoped>
 @import "../../../styles/mixins.pcss";
 
 .reviews{
@@ -127,26 +109,7 @@ export default {
     user-select: none;
   }
 
-.avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center center;
 
-  img {
-    max-height: initial;
-    height: auto;
-  }
-}
-
-
-.avatar--50 {
-  width: 50px;
-  height: 50px;
-  background-image: url('../../../images/content/kovalchuk.jpg');
-}
 
 </style>
 

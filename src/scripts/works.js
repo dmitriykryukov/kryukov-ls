@@ -1,10 +1,14 @@
 import Vue from "vue";
+import axios from "axios";
 
+const $axios = axios.create ({
+  baseURL: 'https://webdev-api.loftschool.com/'
+});
 
 
 const thumbs = {
   template: "#slider-thumbs",
-  props: ["works", "currentWork"]
+  props: ["works", "currentWork", "getPhoto"]
 }
 
 const btns = {
@@ -15,28 +19,37 @@ const btns = {
 const display = {
   template: "#slider-display",
   components: { thumbs, btns },
-  props: ["works", "currentWork", "currentIndex"],
+  props: ["works", "currentWork", "currentIndex", "getImage"],
   computed: {
     reversedWorks() {
       return [...this.works].reverse();
     }
+  },
 
+  methods: {
+    getPhoto (image) {
+      return `https://webdev-api.loftschool.com/${ image }`;
+    },
   }
 }
 
-const tags = {
-  template: "#slider-tags",
-  props: ["tags"]
-}
+// const tags = {
+//   template: "#slider-tags",
+//   props: ["tags"]
+// }
 
 const info = {
   template: "#slider-info",
-  components: { tags },
+  // components: { tags },
   props: ["currentWork"],
   computed: {
     tagsArray() {
-      return this.currentWork.skills.split(', ');
-    }
+      return this.currentWork && this.currentWork.techs ? this.currentWork.techs.split(', ') : '';
+    },
+
+    currentInfo() {
+      return this.currentWork ? this.currentWork : '';
+    },
 
   }
 }
@@ -50,13 +63,19 @@ new Vue ({
   data() {
     return {
       works: [],
-      currentIndex: 0      
+      currentIndex: 0    
     }
   },
   computed: {
     currentWork(){
-      return this.works[this.currentIndex]
-    }
+      return this.works ? this.works[this.currentIndex] : '';
+    },
+    
+    getImage() {
+      const baseUrl = 'https://webdev-api.loftschool.com/';
+      return this.currentWork && this.currentWork.photo ? (baseUrl + this.currentWork.photo) : '';
+      
+    },
   },
 
   methods: {
@@ -86,13 +105,15 @@ new Vue ({
           return this.currentIndex = index;
         }
       });
-    }
+    },
+
   },
 
-  created() {
-    const data = require("../data/works.json");
-    this.works = this.makeArrWithRequiredImages(data);
-    
+  async created() {
+    // const data = require("../data/works.json");
+    // this.works = this.makeArrWithRequiredImages(data);
+    const { data } = await $axios.get("/works/282");
+    this.works = data;
   }
 })
 

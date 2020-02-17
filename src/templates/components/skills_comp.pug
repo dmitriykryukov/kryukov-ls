@@ -1,7 +1,10 @@
 script(type="text/x-template")#skills-list
   .skills__content
     ul.skills-group
-      li.skills-item(v-for="skill in skills")
+      li.skills-item(
+        v-for="skill in skills"
+        v-if="skill.skills.length"
+        )
         skills-row(
           :skill="skill"
         )

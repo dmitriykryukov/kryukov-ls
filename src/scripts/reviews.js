@@ -1,4 +1,9 @@
 import Vue from "vue";
+import axios from "axios";
+
+const $axios = axios.create ({
+  baseURL: 'https://webdev-api.loftschool.com/'
+});
 
 const slideshow = {
   template: "#slideshow-reviews",
@@ -27,11 +32,14 @@ new Vue ({
       });
     },
 
+    workPhoto (photo) {
+      return `https://webdev-api.loftschool.com/${ photo }`;
+    },
+
     slide(direction){
       switch(direction) {
         case "next":
           flkty.next();
-          console.log(flkty.selectedIndex);
           
           break;
         case "prev":
@@ -42,10 +50,13 @@ new Vue ({
 
   },
 
-  created() {
+  async created() {
+    // const { data } = await $axios.get("/reviews/282");
+    // this.reviews = data;
     const data = require("../data/reviews.json");
     this.reviews = this.makeArrWithRequiredImages(data);
   }
+  
 
 });
 
