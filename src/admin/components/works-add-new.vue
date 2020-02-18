@@ -153,7 +153,6 @@ export default {
   },
   watch: {
     work () {
-      // console.log('watch');
       this.newWork = { ...this.work };
       this.renderedPhoto = 'https://webdev-api.loftschool.com/' + this.work.photo;
     }

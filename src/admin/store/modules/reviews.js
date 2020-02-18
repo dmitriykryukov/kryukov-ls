@@ -1,5 +1,5 @@
-import showErrorTooltip from '../../helpers/formData'
-import formData from '../../helpers/showErrorTooltip';
+import formData  from '../../helpers/formData'
+import showErrorTooltip from '../../helpers/showErrorTooltip';
 
 export default {
   namespaced: true,

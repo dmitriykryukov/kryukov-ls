@@ -1,7 +1,7 @@
 .conclusion
   section.parallax-down
     - for (var i = 1; i <= 4; i++)
-      .parallax-down__layer(data-speed=`${0.1 + (i/2.5)/10}`)
+      .parallax-down__layer(data-speed=`${0.1 + (i/2.5)/6}`)
         picture
           img(srcset=require(`images/parallax/budda_${i}.${i === 1 ? 'jpg' : 'png'}`)).parallax-down__image
     

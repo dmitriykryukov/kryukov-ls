@@ -57,9 +57,7 @@ import { mapGetters, mapActions, mapState } from 'vuex';
 export default {
   mixins: [SimpleVueValidator.mixin],
   name: 'reviews-add-new',
-  props: {
-    review: Object
-  },
+  props: ['review'],
   data () {
     return {
       isBlocked: false,
@@ -104,16 +102,16 @@ export default {
         showErrorTooltip(e, error);
       }
     },
-    async reviewCard (payload) {
+    async reviewCard () {
       if (await this.$validate()) {
         this.isBlocked = true;
 
         const isChanged = Object.keys(this.newReview).some(key => {
           return this.newReview[key] !== this.review[key];
         });
-
+        
         if (isChanged) {
-          payload.id ? await this.updateReview(payload) : await this.saveReview(payload);
+          this.newReview.id ? await this.updateReview(this.newReview) : await this.saveReview(this.newReview);
         }
 
         this.$emit('hideAddingCard');
@@ -134,7 +132,6 @@ export default {
   },
   watch: {
     review () {
-      console.log('watch');
       this.newReview = { ...this.review };
       this.renderedPhoto = 'https://webdev-api.loftschool.com/' + this.review.photo;
     }

@@ -74,7 +74,6 @@ new Vue ({
     getImage() {
       const baseUrl = 'https://webdev-api.loftschool.com/';
       return this.currentWork && this.currentWork.photo ? (baseUrl + this.currentWork.photo) : '';
-      
     },
   },
 

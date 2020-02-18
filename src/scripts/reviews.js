@@ -8,6 +8,13 @@ const $axios = axios.create ({
 const slideshow = {
   template: "#slideshow-reviews",
   props: ["reviews"],
+  
+  methods: {
+    reviewAuthorPic(review) {
+      const baseUrl = 'https://webdev-api.loftschool.com/';
+      return review && reviews.photo ? (baseUrl + review.photo) : '';
+    }
+  },
 }
 
 
@@ -32,10 +39,6 @@ new Vue ({
       });
     },
 
-    workPhoto (photo) {
-      return `https://webdev-api.loftschool.com/${ photo }`;
-    },
-
     slide(direction){
       switch(direction) {
         case "next":
@@ -50,13 +53,13 @@ new Vue ({
 
   },
 
+
   async created() {
-    // const { data } = await $axios.get("/reviews/282");
-    // this.reviews = data;
-    const data = require("../data/reviews.json");
-    this.reviews = this.makeArrWithRequiredImages(data);
+    const { data } = await $axios.get("/reviews/282");
+    this.reviews = data;
+    // const data = require("../data/reviews.json");
+    // this.reviews = this.makeArrWithRequiredImages(data);
   }
-  
 
 });
 
@@ -68,10 +71,9 @@ var elem = document.querySelector('.reviews-slideshow');
 var flkty = new Flickity( elem, {
   
  cellAlign: 'left',
- groupCells: 2,
  pageDots: false,
  wrapAround: false,
- 
+ initialIndex: 2,
 
 //  initialIndex: 3,
 //         prevNextButtons: true,

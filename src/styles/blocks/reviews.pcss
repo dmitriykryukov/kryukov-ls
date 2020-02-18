@@ -35,10 +35,20 @@
     &--prev {
       transform: rotate(180deg);
       fill: $text-color;
+
+      &:disabled {
+        border-color: rgba(currentColor, .8);
+        cursor: unset;
+      }
     }
 
     &--next {
       transform: rotate(0deg);
+
+      &:disabled {
+        border-color: rgba(currentColor, .8);
+        cursor: unset;
+      }
     }
 
     &:hover {
