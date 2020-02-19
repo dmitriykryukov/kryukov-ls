@@ -6,7 +6,7 @@ const client = webdriverio.multiremote(options);
 jest.setTimeout(30000);
 
 beforeAll(() => {
-  return client.init().url('http://localhost:8080/admin/#/login');
+  return client.init().url('http://localhost:8080/admin#/login');
 });
 
 test('На странице есть кнопка авторизации', () => {
