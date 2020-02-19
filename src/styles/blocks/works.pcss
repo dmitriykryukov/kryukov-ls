@@ -121,7 +121,7 @@
   right: 0;
   bottom: 0;
   width: 178px;
-
+  background-color: $links-active;
 
   @include phones {
     display: none;
@@ -132,9 +132,11 @@
   height: 100px;
   transition: .2s;
 
-  &.active,
   &:hover {
-    outline: 3px solid #f29400;
+    opacity: 0.7;
+  }
+  &.active {
+    outline: 3px solid $links-active;
   }
 }
 
@@ -184,6 +186,7 @@
     opacity: .3;
   }
   &:hover {
+    background-color: $links-active;
     &:before {
       opacity: 1;
     }
