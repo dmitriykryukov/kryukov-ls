@@ -1,6 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
-// import EventBus from '../EventBus';
+import EventBus from '../EventBus';
 import Flickity from 'vue-flickity';
 
 const $axios = axios.create ({
@@ -65,11 +65,11 @@ new Vue ({
     this.flickityOptions.groupCells = this.slidesPerPage;
   },
 
-  // watch: {
-  //   slidesPerPage() {
-  //     EventBus.$emit('pages', this.pages());
-  //   }
-  // },
+  watch: {
+    slidesPerPage() {
+      EventBus.$emit('pages', this.getPages());
+    }
+  },
 
 
   async created() {
