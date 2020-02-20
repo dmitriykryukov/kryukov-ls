@@ -1,0 +1,63 @@
+script(type="text/x-template")#slider-container
+  .works-slider
+    display(
+      :works="works",
+      :currentWork="currentWork",
+      :currentIndex="currentIndex",
+      :getImage="getImage",
+      @slide="handleSlide",
+      @btnImage="handleBtnImage"
+    )
+    info(
+      :currentWork="currentWork"
+    )
+
+script(type="text/x-template")#slider-display
+  .works-slider__pics(:data-slide="currentIndex + 1")
+    .works-slider__pics-content
+      .works-slider__fullpic-container
+        img(:src="getImage", alt="", class="works-slider__fullpic")
+        btns(
+          @slide="$emit('slide', $event)",
+          :currentWork="currentWork",
+          :currentIndex="currentIndex",
+          :works="works"
+        )
+        thumbs(
+          :works="reversedWorks",
+          :currentWork="currentWork",
+          :getPhoto="getPhoto"
+          @btnImage="$emit('btnImage', $event)",
+        )
+  
+script(type="text/x-template")#slider-thumbs
+  ul.works-slider__thumbs
+    li.works-slider__thumb-item(
+      v-for="work in works"
+      :class="{active: work.id === currentWork.id}")
+      button(@click.prevent="$emit('btnImage', work.id)" class='works-slider__thumb-link' type="button")
+        img(:src="getPhoto(work.photo)", alt="",  class="works-slider__thumb")
+
+
+script(type="text/x-template")#slider-btns
+  .works-slider__buttons
+    button(@click.prevent="$emit('slide','next',)" :class="{disabled: currentIndex === works.length - 1}" ).works-slider__btn.works-slider__btn_next
+    button(@click.prevent="$emit('slide','prev')" :class="{disabled: currentIndex === 0}" ).works-slider__btn.works-slider__btn_prev
+
+
+script(type="text/x-template")#slider-info
+  .works-slider__data
+    ul.works-slider__tags
+      li.works-slider__tag-item(v-for="tag in tagsArray")
+        .tag {{tag}}
+    h3.works-slider__title {{currentInfo.title}}
+    .works-slider__desc
+      p {{currentInfo.description}}
+    .works-slider__link 
+      a(:href="currentInfo.link" target="_blank").iconed-link Посмотреть сайт
+
+
+//- script(type="text/x-template")#slider-tags
+//-   ul.works-slider__tags
+//-       li.works-slider__tag-item(v-for="tag in tags")
+//-         .tag {{tag}}

@@ -1,0 +1,115 @@
+.edit-form {
+  display: flex;
+
+  @include phones {
+      flex-direction: column;
+    }
+
+  &__file {
+    display: none;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__column {
+    flex-basis: 50%;
+    margin-right: 30px;
+
+    @include phones {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--reviews > &__column:nth-child(1) {
+    flex-basis: auto;
+  }
+
+  &--reviews > &__column:nth-child(2) {
+    flex-basis: 60%;
+    @include desktop {
+      flex-basis: 100%;
+    }
+  }
+
+  &__row-double {
+    display: flex;
+    justify-content: space-between;
+    @include tablets {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__row-double > &__row {
+    flex-basis: calc(50% - 15px);
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__frame {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px dashed #a1a1a1;
+    background-color: #dee4ed;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+
+    @include phones {
+      margin: 0 auto;
+    }
+
+    img {
+      height: auto;
+      max-height: initial;
+    }
+  }
+
+  &--reviews {
+    .edit-form__frame {
+      width: 200px;
+      height: 200px;
+      border: none;
+      border-radius: 50%;
+      background-image: svg-load("user-full.svg", fill=#fff);
+      background-repeat: no-repeat;
+      background-size: 75%;
+      &.filled {
+        background-size: cover;
+      }
+    }
+  }
+
+  &__info {
+    width: 50%;
+    text-align: center;
+    color: rgba(#414c63, .5);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  &__btns {
+    justify-content: flex-end;
+  }
+}

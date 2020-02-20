@@ -6,18 +6,41 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    
     title Portfolio | Dmitriy Kryukov
 
   body
-    .wrapper    
-      include ./sections/author.pug
-      include ./sections/skills.pug
-      include ./sections/works.pug
-      include ./sections/conclusion.pug
+    .wrapper
+      .maincontent    
+        include ./sections/author.pug
+
+        //- TRIANGLE TOP
+        .triangles.triangles_top
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,100 1000,100 1000,0")
+            
+        .middle-section
+          include ./sections/skills.pug
+          include ./sections/works.pug
+        
+        //- TRIANGLE BOTTOM
+        .triangles.triangles_bottom
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 1000,0 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,0 0,100 1000,0")
+
+        include ./sections/conclusion.pug
 
       include ./sections/footer.pug
         
 
+    include ./templates/entry.pug
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
         //- .icon-bg

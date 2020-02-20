@@ -1,39 +1,31 @@
 section.works#works
-  .container
-    h2.section-title Мои работы
-    .works__contente
-      .works__left
-        .slider
-          +image('content/work1.jpg', 'slider__fillpic')
-          .slider__preview
-            ul.previews__list
-              - for (var i = 1; i <= 4; i++)
-                li.previews__item
-                  a(class='previews__item-link' href="#")
-                    +image(`content/work${i}.jpg`, 'previews__pic')
-          .numbwer__works 4 
-        .slider-buttons
-          button.slider-buttons__item
-            .icon-arrow.slider-buttons__item--prev
-          button.slider-buttons__item
-            .icon-arrow.slider-buttons__item--next
-
-      .works__right
-        .works__tags
-          - var tags = ['HTML', 'CSS', 'Javascript']
-            ul.tags
-              each tag in tags
-                li.tags__item #{tag}
-        .works__text
-          h3.works__title Сайт школы образования
-          .works__desc-text
-            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam dolorum nulla placeat cumque nostrum commodi ad numquam dolores distinctio officiis molestiae.
-          a(href="#").iconed-link
-            .icon-link
-            .iconed-link__text Посмотреть сайт
-  .triangles-reverse
-    svg.triangles-reverse__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-      polygon(points="0,0 1000,100 1000,0")
-    svg.triangles-reverse__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-      polygon(points="0,0 0,100 1000,0")
+  .container.works__container
+    h2.section-title.works__section-title Мои работы
+    .works__content
+      #slider-component
+      //- .works-slider
+      //-   .works-slider__pics(data-slide="1")
+      //-     .works-slider__pics-content
+      //-       .works-slider__fullpic-container
+      //-         +image('content/work1.jpg', 'works-slider__fullpic')
+      //-         .works-slider__buttons
+      //-           button.works-slider__btn.works-slider__btn_next
+      //-           button.works-slider__btn.works-slider__btn_prev
+      //-         ul.works-slider__thumbs
+      //-           - for (var i = 1; i <= 4; i++)
+      //-             li.works-slider__thumb-item
+      //-               button(class='works-slider__thumb-link')
+      //-                 +image(`content/work${i}.jpg`, 'works-slider__thumb')
+      //-   .works-slider__data
+      //-     - var tags = ['HTML', 'CSS', 'Javascript']
+      //-       ul.works-slider__tags
+      //-         each tag in tags
+      //-           li.works-slider__tag-item
+      //-             .tag #{tag}
+      //-       h3.works-slider__title Сайт школы образования
+      //-       .works-slider__desc
+      //-         p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam dolorum nulla placeat cumque nostrum commodi ad numquam dolores distinctio officiis molestiae.
+      //-       .works-slider__link 
+      //-         a(href="#").iconed-link Посмотреть сайт
+  
       

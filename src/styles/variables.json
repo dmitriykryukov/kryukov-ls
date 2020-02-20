@@ -1,7 +1,12 @@
 {
   "text-color": "#414c63",
   "links-color": "#4b6fd7",
+  "links-active": "#5500f2",
+  "links-hover-footer": "#ff9a00",
   "grey": "#e9e9e9",
+  "admin-blue": "#383bcf",
+  "errors-color": "#cd1515",
+  "tags-color": "#2f3642",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",

@@ -1,40 +1,101 @@
 .about {
-  max-width: 978px;
-  min-height: 700px;
-  padding-bottom: 120px;
-  margin: 0 auto;
-  padding-top: 52px;
+  position: relative;
+ 
+  @include desktopHd {
+    /* min-height: 700px; */
+  } 
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
+  @include desktop {
+    /* padding-top: 390px; */
+  } 
+
+   @include tablets {
+    /* padding-top: 390px; */
+  } 
+
+   @include phones {
+    /* padding-top: 390px; */
+  } 
+
+}
+
+.about__columns {
+  display: flex;
+  justify-content: space-between;
+
+  @include desktopHd {
+   padding: 50px 17% 265px;
+  }
+  
+  @include desktop {
+    padding: 395px 0 250px;
+  }
+
+  @include tablets {
+    padding: 70px 0 8.625rem;
+  }
+
+  @include phones {
+    flex-direction: column;
+    padding: 114px 0 114px;
+  }
+}
+
+.about__user {
+  width: 36%;
+  
+  @include phones {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+.about__user-text {
+  color: rgba($text-color, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 56%;
+
+  @include phones {
+    width: 100%;
   }
 }
 
 
-.about__left {
-  width: calc((100%/8)*3);
-}
-
-.about__right {
-  width: calc((100%/8)*5);
-  padding-left: 64px;
-  line-height: 1.9;
-}
-
-.about__prolog, .about__text {
-  opacity: 0.5;
+.about__prolog {
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .about__title {
   font-size: 36px;
-  font-weight: bold;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: $text-color;
 }
 
 .about__ps {
   font-style: italic;
-  padding-top: 135px;
-  opacity: 0.5;
-  font-weight: 600;
+  margin-bottom: 65px;
+  position: relative;
+
+  @include phones {
+    margin-top: 30px; 
+  }
+
+  &:before {
+    content: "*";
+    position: absolute;
+    font-size: 48px;
+    color: rgba(#db0200, .1);
+    top: -10px;
+    left: -80px;
+    margin-left: 20px;
+
+    @include phones {
+      top: -10px;
+      left: -60px; 
+    }
+  }
 }

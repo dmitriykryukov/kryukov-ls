@@ -1,0 +1,17 @@
+script(type="text/x-template")#reviews-container
+  .review-content
+    .reviews-container__head
+      h2.section-title.section-title--reviews Что обо мне говорят
+      .reviews-btns
+        button(@click="slide('prev')" type='button'  :disabled="activePage === 0").reviews-btns__slider
+        button(@click="slide('next')" type='button'  :disabled="activePage === pages").reviews-btns__slider
+    flickity.flickity(ref='flickity' :options='flickityOptions',).reviews-slideshow
+      .reviews-slideshow__item(v-for="review in reviews" :key="review.id")
+        .reviews-slideshow__item--desc
+          | {{review.text}}
+        .reviews-slideshow__item--author
+          .avatar.author__avatar
+            img(:src="review.photo" alt="Author photo").avatar__pic
+          .author__info
+            h2.author__name {{review.author}}
+            .author__position {{review.occ}}

@@ -1,87 +1,203 @@
 .skills {
-  min-height: 825px;
-  padding-top: 137px;
-	position: relative;
-	overflow: hidden;
-	background-color: #fff;
+  margin-bottom: 114px;
 
-	&__background-image {
-		position: absolute;
-		top: 253px;
-		left: 23px;
+  @include phones {
+    margin-bottom: 75px;
+  }
+}
+
+.skills__container {
+	position: relative;
+
+	@include tablets {
+    padding-bottom: 350px;
+  }
+
+	&:before {
+    content: "";
+    position: absolute;
+    background: url('~images/content/backpack.jpg') left bottom / contain no-repeat;
+    display: block;
+    bottom: 5%;
+    height: 79%;
+    width: 69%;
+    left: -5%;
+
+    
+    @include desktopHd {
+      left: -12%;
+    }
+
+
+    @include desktop {
+      left: -25%;
+    }
+
+    
+    @include tablets {
+      bottom: 0;
+      left: 50%;
+      height: 300px;
+      transform: translateX(-50%);
+      background-position: center center;
+    }
+
+    @include phones {
+      width: 100%;
+    }
+  }
+}
+
+.skills__wrapper{
+	position: relative;
+}
+
+.skills__title {
+	margin-bottom: 57px;
+  display: flex;
+  justify-content: center;
+
+  @include desktop {
+    margin-bottom: 47px;
 	}
 }
 
-.values{
-	padding-left: 504px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-bottom: 51px;
+.skills__title-container {
+  width: 45%;
+	margin-left: 12%;
 	
-	&__title-text {
-		font-size: 30px;
-		font-weight: bold;
-		margin-bottom: 48px;
+  @include desktop {
+    width: 49%;
+    margin-left: 0;
 	}
+	
+  @include tablets {
+    width: 68%;
+    text-align: center;
+	}
+	
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
-	&__desc {
-		padding-right: 378px;
-		line-height: 1.9;
-		margin-bottom: 51px;
-		opacity: 0.5;
-  	font-weight: 600;
+.skills__title-text {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 55px;
+
+  @include tablets {
+    padding: 0;
+  }
+
+  @include phones {
+    padding: 0 35px;
+  }
+}
+
+
+.skills__desc {
+  color: rgba($text-color, .5);
+  font-weight: 600;
+	line-height: 1.8;
+}
+
+
+/* WIDGETS */
+
+.skills__widget {
+  display: flex;
+	justify-content: flex-end;
+	
+  @include tablets {
+    justify-content: center;
+  }
+}
+
+.skills__content {
+	width: 66%;
+	padding-left: 120px;
+
+  @include desktop {
+    padding-left: 0;
 	}
+	
+  @include tablets {
+    width: 95%;
+  }
 }
 
 .skills-group {
-	padding-left: 127px;
-	padding-right: 96px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
 
-	&__item {
-		padding-bottom: 27px;
-	}
-
-	&__title {
-		font-size: 24px;
-		font-weight: bold;
-		padding-bottom: 27px;
-		}
+  @include phones {
+    text-align: center;
+  }
 }
 
+.skills-group__item {
+  margin-bottom: 30px;
+}
 
+.skills-item {
+	margin-bottom: 33px;
 
-.skills-list {
-	display: flex;
-  justify-content: space-between;
-	flex-direction: row;
+  @include tablets {
+    text-align: center;
+  } 
 
-	&__item {
-		display: inline-block;
-		position: relative;
+  @include desktop {
+    margin-bottom: 45px;
 	}
 }
 
+.skills-row__title {
+  margin-bottom: 26px;
+  font-size: 24px;
+  font-weight: 700;
+}
 
-.skill__svg-shape {
-		width: 168px;
-		fill: transparent;
+.skills-row__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4%;
 
-	}
+  @include tablets {
+    justify-content: center;
+  } 
 
-.skills__circle {
-	&--under {
-		fill: transparent;
+  @include phones {
+    justify-content: center;
+  }
+}
+
+.skills-row__item {
+  margin-left: 4%;
+}
+
+.skill {
+  position: relative;
+  width: 166px;
+  height: 166px;
+
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.skill__circle {
+  fill: transparent;
+
+	&--under {	
 		stroke: #e9e9e9;
-		stroke-width: 10PX;
+		stroke-width: 5px;
 	}
 
 	&--above {
-		stroke-dasharray: 502;
-		stroke-width: 22px;
+		stroke-dasharray: 251;
+    /* stroke-dashoffset: 100; */
+		stroke-width: 12px;
 		stroke: url(#gradient);
 		transform: rotate(180deg);
 		transform-origin: 50% 50%;
@@ -97,18 +213,23 @@
 	transform: translate(-50%, -50%);
 	font-weight: 700;
   font-size: 18px;
-	color: rgba(grey, .5);
+	color: rgba($text-color, .5);
 	text-align: center;
+}
+
+@include phones {
+	font-size: 16px;
 }
 
 @keyframes skillProgress {
     0% {
-        stroke-dashoffset: 502;
+        stroke-dashoffset: 251;
     }
     100% {
         stroke-dashoffset: 0;
     }
-}
+} 
+
 
 
 

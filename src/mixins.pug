@@ -5,11 +5,20 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+-
+  var navItems =  [
+      ['Главная','#author'],
+      ['Обо мне', '#about'],
+      ['Навыки', '#skills'],
+      ['Работы', '#works'],
+      ['Отзывы', '#reviews'],
+      ['Связаться', '#feedback']
+  ]
 
-mixin nav(className, items)
-  nav(class=`${className}`)
+mixin nav(className, classStyle)
+  nav(class=`${className} ${classStyle}`)
     ul(class=`${className}__list`)
-      each item in items
+      each item in navItems
         li(class=`${className}__item`)
-          a(class=`${className}__link` href=`${item.link}`)= item.title
+          a(class=`${className}__link` href=`${item[1]}`)= item[0]
       
